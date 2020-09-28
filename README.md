@@ -6,7 +6,9 @@ A [Lilu](https://github.com/acidanthera/Lilu) plugin for enabling Sidecar on Pro
 This plugin is only tested on my Catalina 10.15.6 hackintosh with SMBIOS MacPro7,1,  UHD 630 enabled and a dedicated card rx580. Maybe it will also work on those without integrated graphics with other patches. 
 
 The key patch is two hardcode board-ids in the framework VideoConference and AppleGVA. 
-  
+
+**Remove dyld_shared_cache in /var/db/dyld/ after installing this plugin.**
+
 #### Configuration
 
 - `-sidecardbgpro` enables debug printing (available in DEBUG binaries).
