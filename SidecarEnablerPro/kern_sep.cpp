@@ -45,7 +45,7 @@ static UserPatcher::BinaryModPatch patches[] = {
         0,
         1,
         UserPatcher::FileSegment::SegmentTextUstring,
-        4
+        1
     },
     {
         CPU_TYPE_X86_64,
@@ -56,7 +56,7 @@ static UserPatcher::BinaryModPatch patches[] = {
         0,
         1,
         UserPatcher::FileSegment::SegmentTextUstring,
-        4
+        1
     }
 };
 
@@ -70,7 +70,7 @@ static UserPatcher::BinaryModPatch patches2[] = {
         0,
         1,
         UserPatcher::FileSegment::SegmentTextCstring,
-        3,
+        1
     },
     {
         CPU_TYPE_X86_64,
@@ -81,7 +81,7 @@ static UserPatcher::BinaryModPatch patches2[] = {
         0,
         1,
         UserPatcher::FileSegment::SegmentTextCstring,
-        3,
+        1
     },
 };
 
@@ -91,16 +91,12 @@ static UserPatcher::BinaryModInfo modInfo[] {
 };
 
 static UserPatcher::ProcInfo procInfo[] {
-    { avconferenced, avconferencedSize, 1 }
-};
-
-static UserPatcher::ProcInfo sidecarInfo[] {
+    { avconferenced, avconferencedSize, 1 },
     {sidecarDisplayAgent, sidecarDisplayAgentSize, 1}
 };
 
 void com_sxx_SEP::init() {
-    lilu.onProcLoad(procInfo, 1, nullptr, nullptr, modInfo, 2);
-    lilu.onProcLoad(sidecarInfo, 1, nullptr, nullptr, modInfo, 2);
+    lilu.onProcLoad(procInfo, 2, nullptr, nullptr, modInfo, 2);
 }
 
 void com_sxx_SEP::deinit() {
